@@ -1,0 +1,59 @@
+* {box-sizing:border-box}
+.container {
+  width: 100%;
+  background-color: White
+}
+.goals {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+}
+.Feature1_0 {width: 0%; background-color: #04AA6D;}
+.Feature1_10 {width: 10%; background-color: #04AA6D;}
+.Feature1_20 {width: 20%; background-color: #04AA6D;}
+.Feature1_30 {width: 30%; background-color: #04AA6D;}
+.Feature1_40 {width: 40%; background-color: #04AA6D;}
+.Feature1_50 {width: 50%; background-color: #04AA6D;}
+.Feature1_60 {width: 60%; background-color: #04AA6D;}
+.Feature1_70 {width: 70%; background-color: #04AA6D;}
+.Feature1_80 {width: 80%; background-color: #04AA6D;}
+.Feature1_90 {width: 90%; background-color: #04AA6D;}
+.Feature1_100 {width: 100%; background-color: #04AA6D;}
+
+.Feature2_0 {width: 0%; background-color: #2196F3;}
+.Feature2_10 {width: 10%; background-color: #2196F3;}
+.Feature2_20 {width: 20%; background-color: #2196F3;}
+.Feature2_30 {width: 30%; background-color: #2196F3;}
+.Feature2_40 {width: 40%; background-color: #2196F3;}
+.Feature2_50 {width: 50%; background-color: #2196F3;}
+.Feature2_60 {width: 60%; background-color: #2196F3;}
+.Feature2_70 {width: 70%; background-color: #2196F3;}
+.Feature2_80 {width: 80%; background-color: #2196F3;}
+.Feature2_90 {width: 90%; background-color: #2196F3;}
+.Feature2_100 {width: 100%; background-color: #2196F3;}
+
+.Feature3_0 {width: 0%; background-color: #f44336;}
+.Feature3_10 {width: 10%; background-color: #f44336;}
+.Feature3_20 {width: 20%; background-color: #f44336;}
+.Feature3_30 {width: 30%; background-color: #f44336;}
+.Feature3_40 {width: 40%; background-color: #f44336;}
+.Feature3_50 {width: 50%; background-color: #f44336;}
+.Feature3_60 {width: 60%; background-color: #f44336;}
+.Feature3_70 {width: 70%; background-color: #f44336;}
+.Feature3_80 {width: 80%; background-color: #f44336;}
+.Feature3_90 {width: 90%; background-color: #f44336;}
+.Feature3_100 {width: 100%; background-color: #f44336;}
+
+
+.Feature4_0 {width: 0%; background-color: #808080;}
+.Feature4_10 {width: 10%; background-color: #808080;}
+.Feature4_20 {width: 20%; background-color: #808080;}
+.Feature4_30 {width: 30%; background-color: #808080;}
+.Feature4_40 {width: 40%; background-color: #808080;}
+.Feature4_50 {width: 50%; background-color: #808080;}
+.Feature4_60 {width: 60%; background-color: #808080;}
+.Feature4_70 {width: 70%; background-color: #808080;}
+.Feature4_80 {width: 80%; background-color: #808080;}
+.Feature4_90 {width: 90%; background-color: #808080;}
+.Feature4_100 {width: 100%; background-color: #808080;}

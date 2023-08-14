@@ -1,0 +1,4457 @@
+{
+  "x-generator": "NSwag v13.16.1.0 (NJsonSchema v10.7.2.0 (Newtonsoft.Json v9.0.0.0))",
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Sustamize.Materials.Api",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://data.sustamizer.com"
+    },
+    {
+      "url": "https://data.sustamizer.com"
+    }
+  ],
+  "paths": {
+    "/materials/api/v1/composites/uuid/{uuid}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetCompositeByUuidEndpoint",
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetCompositeResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/composites/name/{entityName}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetCompositesByNameEndpoint",
+        "parameters": [
+          {
+            "name": "entityName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetCompositesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/composites/sid/{sustamizeId}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetCompositesBySidEndpoint",
+        "parameters": [
+          {
+            "name": "sustamizeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetCompositesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/composites": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetCompositesEndpoint",
+        "parameters": [
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetCompositesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/construction/name/{entityName}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetConstructionEntriesByNameEndpoint",
+        "parameters": [
+          {
+            "name": "entityName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "includeUptake",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetConstructionEntriesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/construction/sid/{sustamizeId}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetConstructionEndpointsBySidEndpoint",
+        "parameters": [
+          {
+            "name": "sustamizeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "includeUptake",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetConstructionEntriesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/construction": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetConstructionEntriesEndpoint",
+        "parameters": [
+          {
+            "name": "includeUptake",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetConstructionEntriesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/construction/uuid/{uuid}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetConstructionEntryByUuidEndpoint",
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "includeUptake",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetConstructionEntryResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/elements/uuid/{uuid}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetElementByUuidEndpoint",
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetElementResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/elements/name/{entityName}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetElementsByNameEndpoint",
+        "parameters": [
+          {
+            "name": "entityName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetElementsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/elements/sid/{sustamizeId}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetElementBySidEndpoint",
+        "parameters": [
+          {
+            "name": "sustamizeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetElementsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/elements": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetElementsEndpoint",
+        "parameters": [
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetElementsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/metals/uuid/{uuid}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetMetalByUuidEndpoint",
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "deliveryShape",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetMetalResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/metals/materialCode/{materialCode}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetMetalsByMaterialCodeEndpoint",
+        "parameters": [
+          {
+            "name": "materialCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "referenceType",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "recycled",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "deliveryShape",
+            "in": "query",
+            "description": "List of metal shapes for which to return co2 values. Possible values: raw, coil, block, extruded",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "List of fields to include separated by comma. Posiible values: applications, characteristics, elementShares",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetMetalsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/metals/name/{entityName}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetMetalsByNameEndpoint",
+        "parameters": [
+          {
+            "name": "entityName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "referenceType",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "recycled",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "deliveryShape",
+            "in": "query",
+            "description": "List of metal shapes for which to return co2 values. Possible values: raw, coil, block, extruded",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "List of fields to include separated by comma. Posiible values: applications, characteristics, elementShares",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetMetalsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/metals/sid/{sustamizeId}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetMetalsBySidEndpoint",
+        "parameters": [
+          {
+            "name": "sustamizeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "referenceType",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "recycled",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "deliveryShape",
+            "in": "query",
+            "description": "List of metal shapes for which to return co2 values. Possible values: raw, coil, block, extruded",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "List of fields to include separated by comma. Posiible values: applications, characteristics, elementShares",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetMetalsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/metals": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetMetalsEndpoint",
+        "parameters": [
+          {
+            "name": "referenceType",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "recycled",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "deliveryShape",
+            "in": "query",
+            "description": "List of metal shapes for which to return co2 values. Possible values: raw, coil, block, extruded",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "List of fields to include separated by comma. Posiible values: applications, characteristics, elementShares",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetMetalsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/polymers/uuid/{uuid}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetPolymerByUuidEndpoint",
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "includePyrolysis",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetPolymerResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/polymers/name/{entityName}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetPolymersByNameEndpoint",
+        "parameters": [
+          {
+            "name": "entityName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "includePyrolysis",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetPolymersResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/polymers/sid/{sustamizeId}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetPolymersBySidEndpoint",
+        "parameters": [
+          {
+            "name": "sustamizeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "includePyrolysis",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetPolymersResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/polymers": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetPolymersEndpoint",
+        "parameters": [
+          {
+            "name": "includePyrolysis",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetPolymersResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/sinters/uuid/{uuid}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetSinterByUuidEndpoint",
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSinterResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/sinters/name/{entityName}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetSintersByNameEndpoint",
+        "parameters": [
+          {
+            "name": "entityName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSintersResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/sinters/sid/{sustamizeId}": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetSintersBySidEndpoint",
+        "parameters": [
+          {
+            "name": "sustamizeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSintersResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/materials/api/v1/sinters": {
+      "get": {
+        "tags": [
+          "materials"
+        ],
+        "operationId": "SustamizeProductionApiEndpointsGetSintersEndpoint",
+        "parameters": [
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          },
+          {
+            "name": "valid",
+            "in": "query",
+            "schema": {
+              "title": "Boolean",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Range 1 to 50",
+            "schema": {
+              "title": "Int32",
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "title": "String",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSintersResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "GetCompositeResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/CompositeModel"
+              }
+            ]
+          }
+        }
+      },
+      "CompositeModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "addedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastUpdatedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "sustamizeId": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "/^s-cmp-\\d+/",
+            "nullable": true
+          },
+          "shortName": {
+            "type": "string",
+            "maxLength": 64,
+            "nullable": true
+          },
+          "marketName": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "matrix": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MaterialShareModel"
+            }
+          },
+          "fiber": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MaterialShareModel"
+            }
+          },
+          "co2Amount": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BaseRecycledModel"
+              }
+            ]
+          }
+        }
+      },
+      "MaterialShareModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "shareOf": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/OneOfMaterialShareShareOfModel"
+              }
+            ]
+          },
+          "shareAmount": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          }
+        }
+      },
+      "OneOfMaterialShareShareOfModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "polymer": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PolymerModel"
+              }
+            ]
+          },
+          "compositeFiber": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/CompositeFiberModel"
+              }
+            ]
+          }
+        }
+      },
+      "PolymerModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "addedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastUpdatedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "sustamizeId": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "/^s-pmr-\\d+/",
+            "nullable": true
+          },
+          "shortName": {
+            "type": "string",
+            "maxLength": 64,
+            "nullable": true
+          },
+          "fullName": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "class": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MaterialClassModel"
+              }
+            ]
+          },
+          "characteristics": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MaterialCharacteristicModel"
+            }
+          },
+          "applications": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MaterialApplicationModel"
+            }
+          },
+          "glassTemperature": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "glassTemperatureUnit": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnitModel"
+              }
+            ]
+          },
+          "density": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "densityUnit": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnitModel"
+              }
+            ]
+          },
+          "energyConsumption": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/EnergyConsumptionModel"
+            }
+          },
+          "co2Amount": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BaseRecycledModel"
+              }
+            ]
+          },
+          "co2AmountPyrolysis": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BaseRecycledModel"
+              }
+            ]
+          }
+        }
+      },
+      "MaterialClassModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "descriptionEn": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "descriptionDe": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          }
+        }
+      },
+      "MaterialCharacteristicModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "descriptionEn": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "descriptionDe": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          }
+        }
+      },
+      "MaterialApplicationModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "descriptionEn": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "descriptionDe": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          }
+        }
+      },
+      "UnitModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "symbol": {
+            "type": "string",
+            "maxLength": 64,
+            "nullable": true
+          },
+          "remarkEn": {
+            "type": "string",
+            "nullable": true
+          },
+          "remarkDe": {
+            "type": "string",
+            "nullable": true
+          },
+          "lifecycleStage": {
+            "type": "integer"
+          }
+        }
+      },
+      "EnergyConsumptionModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "addedOn": {
+            "type": "string",
+            "nullable": true
+          },
+          "consumptionValue": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "consumptionUnit": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnitModel"
+              }
+            ]
+          },
+          "validity": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ValidityModel"
+              }
+            ]
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          },
+          "source": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/SourceModel"
+              }
+            ]
+          },
+          "lifecycleStage": {
+            "type": "integer"
+          }
+        }
+      },
+      "ValidityModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "validFrom": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "validTo": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        }
+      },
+      "SourceModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "sustamizeId": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "/^s-src-\\d+/",
+            "nullable": true
+          },
+          "addedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastUpdatedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "descriptionEn": {
+            "type": "string",
+            "nullable": true
+          },
+          "descriptionDe": {
+            "type": "string",
+            "nullable": true
+          },
+          "year": {
+            "type": "integer",
+            "nullable": true
+          },
+          "classification": {
+            "type": "string",
+            "maxLength": 256,
+            "nullable": true
+          },
+          "quality": {
+            "type": "integer",
+            "format": "int32",
+            "maximum": 5.0,
+            "minimum": 1.0,
+            "nullable": true
+          },
+          "authors": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/SourceCollaboratorModel"
+            }
+          },
+          "editors": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/SourceCollaboratorModel"
+            }
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "urlVisitedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "validity": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ValidityModel"
+              }
+            ]
+          },
+          "lifecycleStage": {
+            "type": "integer"
+          }
+        }
+      },
+      "SourceCollaboratorModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "organization": {
+            "type": "string",
+            "nullable": true
+          },
+          "lifecycleStage": {
+            "type": "integer"
+          }
+        }
+      },
+      "BaseRecycledModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "base": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Co2CalculationModel"
+              }
+            ]
+          },
+          "recycled": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Co2CalculationModel"
+              }
+            ]
+          }
+        }
+      },
+      "Co2CalculationModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "co2ValueEntries": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/Co2ValueModel"
+            }
+          },
+          "isCountryCorrectionApplied": {
+            "type": "boolean"
+          },
+          "common": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "median": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "mean": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "min": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "max": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "range": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          }
+        }
+      },
+      "Co2ValueModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "addedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isCommon": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isRecycled": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "referenceValue": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "referenceValueRange": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/RangeModel"
+              }
+            ]
+          },
+          "referenceValueUnit": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnitModel"
+              }
+            ]
+          },
+          "measurementCalculationFactor": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "entity": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/OneOfCo2ValueEntityModel"
+              }
+            ]
+          },
+          "source": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/SourceModel"
+              }
+            ]
+          },
+          "origin": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Co2ValueOriginModel"
+              }
+            ]
+          },
+          "validity": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ValidityModel"
+              }
+            ]
+          }
+        }
+      },
+      "RangeModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "rangeFrom": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "rangeTo": {
+            "type": "number",
+            "format": "decimal"
+          }
+        }
+      },
+      "OneOfCo2ValueEntityModel": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "Co2ValueOriginModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "descriptionEn": {
+            "type": "string",
+            "nullable": true
+          },
+          "descriptionDe": {
+            "type": "string",
+            "nullable": true
+          },
+          "commentsEn": {
+            "type": "string",
+            "nullable": true
+          },
+          "commentsDe": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "CompositeFiberModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "Id": {
+            "type": "string",
+            "format": "guid"
+          },
+          "AddedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ShortName": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "StatusCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Message": {
+            "type": "string"
+          },
+          "Errors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "GetEntryByCountryCodeRequest": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GetEntryRequest"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false
+          }
+        ]
+      },
+      "GetEntryRequest": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "GetCompositesResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/CompositeModel"
+            }
+          }
+        }
+      },
+      "GetEntriesByCountryCodeRequest": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GetEntriesRequest"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false
+          }
+        ]
+      },
+      "GetEntriesRequest": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "GetConstructionEntriesResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ConstructionModel"
+            }
+          }
+        }
+      },
+      "ConstructionModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "addedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastUpdatedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "sustamizeId": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "/^s-cst-\\d+/",
+            "nullable": true
+          },
+          "dimensionInformation": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "remark": {
+            "type": "string",
+            "nullable": true
+          },
+          "mainMaterialDefaultMeasurementValue": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "mainMaterialMeasurementUnit": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnitModel"
+              }
+            ]
+          },
+          "mainMaterial": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ConstructionMaterial"
+              }
+            ]
+          },
+          "co2Amount": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Co2CalculationModel"
+              }
+            ]
+          },
+          "co2AmountUptake": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Co2CalculationModel"
+              }
+            ]
+          },
+          "applications": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MaterialApplicationModel"
+            }
+          }
+        }
+      },
+      "ConstructionMaterial": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "descriptionEn": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "descriptionDe": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "class": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MaterialClassModel"
+              }
+            ]
+          },
+          "materialGroup": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MaterialGroupModel"
+              }
+            ]
+          },
+          "characteristics": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MaterialCharacteristicModel"
+            }
+          }
+        }
+      },
+      "MaterialGroupModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "descriptionEn": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "descriptionDe": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          }
+        }
+      },
+      "GetConstructionEntriesRequest": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GetEntriesByCountryCodeRequest"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false
+          }
+        ]
+      },
+      "GetConstructionEntryResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ConstructionModel"
+              }
+            ]
+          }
+        }
+      },
+      "GetConstructionEntryRequest": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GetEntryByCountryCodeRequest"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false
+          }
+        ]
+      },
+      "GetElementResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ElementModel"
+              }
+            ]
+          }
+        }
+      },
+      "ElementModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "addedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastUpdatedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "sustamizeId": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "/^s-elm-\\d+/",
+            "nullable": true
+          },
+          "dataType": {
+            "type": "string",
+            "maxLength": 32,
+            "nullable": true
+          },
+          "periodicTableSymbol": {
+            "type": "string",
+            "maxLength": 2,
+            "nullable": true
+          },
+          "nameEn": {
+            "type": "string",
+            "maxLength": 64,
+            "nullable": true
+          },
+          "nameDe": {
+            "type": "string",
+            "maxLength": 64,
+            "nullable": true
+          },
+          "descriptionEn": {
+            "type": "string",
+            "maxLength": 256,
+            "nullable": true
+          },
+          "descriptionDe": {
+            "type": "string",
+            "maxLength": 256,
+            "nullable": true
+          },
+          "co2AmountPrimary": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Co2CalculationModel"
+              }
+            ]
+          },
+          "co2AmountSecondary": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Co2CalculationModel"
+              }
+            ]
+          },
+          "electricEnergyConsumption": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/EnergyConsumptionModel"
+            }
+          },
+          "energyConsumptionPrimary": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/EnergyConsumptionModel"
+            }
+          },
+          "electricEnergyConsumptionRecycling": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/EnergyConsumptionModel"
+            }
+          }
+        }
+      },
+      "GetElementsResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ElementModel"
+            }
+          }
+        }
+      },
+      "GetMetalResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MetalModel"
+              }
+            ]
+          }
+        }
+      },
+      "MetalModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "addedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastUpdatedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "sustamizeId": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "/^s-mtl-\\d+/",
+            "nullable": true
+          },
+          "wnrEu": {
+            "type": "string",
+            "maxLength": 64,
+            "nullable": true
+          },
+          "oldName": {
+            "type": "string",
+            "maxLength": 64,
+            "nullable": true
+          },
+          "ukName": {
+            "type": "string",
+            "maxLength": 64,
+            "nullable": true
+          },
+          "usName": {
+            "type": "string",
+            "maxLength": 64,
+            "nullable": true
+          },
+          "descriptionEn": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "descriptionDe": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "classification": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MaterialClassModel"
+              }
+            ]
+          },
+          "group": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MaterialGroupModel"
+              }
+            ]
+          },
+          "characteristics": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MaterialCharacteristicModel"
+            }
+          },
+          "applications": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MaterialApplicationModel"
+            }
+          },
+          "yieldStrength": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "yieldStrengthUnit": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnitModel"
+              }
+            ]
+          },
+          "ruptureStrength": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "ruptureStrengthRange": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/RangeModel"
+              }
+            ]
+          },
+          "ruptureStrengthUnit": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnitModel"
+              }
+            ]
+          },
+          "density": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "densityUnit": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnitModel"
+              }
+            ]
+          },
+          "maximumElongation": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "maximumElongationRange": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/RangeModel"
+              }
+            ]
+          },
+          "maximumElongationUnit": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnitModel"
+              }
+            ]
+          },
+          "elementShares": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ElementShareModel"
+            }
+          },
+          "shareOthers": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "rawCo2Amount": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BaseRecycledModel"
+              }
+            ]
+          },
+          "coilCo2Amount": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BaseRecycledModel"
+              }
+            ]
+          },
+          "fullProfileCo2Amount": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BaseRecycledModel"
+              }
+            ]
+          },
+          "hollowProfileCo2Amount": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BaseRecycledModel"
+              }
+            ]
+          }
+        }
+      },
+      "ElementShareModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "shareOf": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ElementModel"
+              }
+            ]
+          },
+          "shareAmount": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          }
+        }
+      },
+      "GetMetalRequest": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GetEntryByCountryCodeRequest"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false
+          }
+        ]
+      },
+      "GetMetalsResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MetalModel"
+            }
+          }
+        }
+      },
+      "GetMetalsRequest": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GetEntriesByCountryCodeRequest"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false
+          }
+        ]
+      },
+      "GetPolymerResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PolymerModel"
+              }
+            ]
+          }
+        }
+      },
+      "GetPolymerRequest": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GetEntryByCountryCodeRequest"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false
+          }
+        ]
+      },
+      "GetPolymersResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/PolymerModel"
+            }
+          }
+        }
+      },
+      "GetPolymersRequest": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GetEntriesByCountryCodeRequest"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false
+          }
+        ]
+      },
+      "GetSinterResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/SinterModel"
+              }
+            ]
+          }
+        }
+      },
+      "SinterModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "addedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastUpdatedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "sustamizeId": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "/^s-str-\\d+/",
+            "nullable": true
+          },
+          "shortName": {
+            "type": "string",
+            "maxLength": 64,
+            "nullable": true
+          },
+          "fullNameEn": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "fullNameDe": {
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "applications": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MaterialApplicationModel"
+            }
+          },
+          "characteristics": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MaterialCharacteristicModel"
+            }
+          },
+          "rx": {
+            "type": "string",
+            "maxLength": 16,
+            "nullable": true
+          },
+          "rxUnit": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnitModel"
+              }
+            ]
+          },
+          "strength": {
+            "type": "string",
+            "maxLength": 32,
+            "nullable": true
+          },
+          "strengthUnit": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnitModel"
+              }
+            ]
+          },
+          "density": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "densityUnit": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnitModel"
+              }
+            ]
+          },
+          "co2Amount": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Co2CalculationModel"
+              }
+            ]
+          }
+        }
+      },
+      "GetSintersResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/SinterModel"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "JWTBearerAuth": {
+        "type": "http",
+        "description": "Enter a JWT token to authorize the requests...",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "JWTBearerAuth": []
+    }
+  ]
+}
